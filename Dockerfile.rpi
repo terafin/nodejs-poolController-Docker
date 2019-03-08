@@ -1,10 +1,10 @@
-FROM resin/raspberrypi3-node:9
+FROM arm32v7/node:10-jessie
 
 VOLUME /var/poolcontroller/config/
 EXPOSE 3000 9801
 
-RUN apt-get update ; apt-get -fy install curl git python make g++ npm
-
+RUN apt-get update 
+RUN apt-get install -fy npm
 
 # Setup base app
 RUN mkdir -p /usr/app/
@@ -12,16 +12,16 @@ WORKDIR /usr/app/
 RUN git clone https://github.com/tagyoureit/nodejs-poolController.git poolcontroller
 WORKDIR /usr/app/poolcontroller
 
+# RUN mkdir -p /var/poolcontroller/config/
+# ADD https://raw.githubusercontent.com/tagyoureit/nodejs-poolController/master/config.json /var/poolcontroller/config/ 
+# RUN rm /usr/app/poolcontroller/config.json
+# RUN ln -s /var/poolcontroller/config/config.json /usr/app/poolcontroller/config.json
+
 # Install
 RUN npm install --production
 
 # Setup config areas
-RUN mkdir -p /var/poolcontroller/config/
-ADD https://raw.githubusercontent.com/tagyoureit/nodejs-poolController/master/config.json /var/poolcontroller/config/ 
-RUN rm /usr/app/poolcontroller/config.json
-RUN ln -s /var/poolcontroller/config/config.json /usr/app/poolcontroller/config.json
 WORKDIR /usr/app/poolcontroller/
 
 # Go!
 CMD ["npm", "start"]
-
