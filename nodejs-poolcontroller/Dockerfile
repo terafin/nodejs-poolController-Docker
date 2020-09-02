@@ -4,6 +4,8 @@ FROM node:12
 VOLUME /var/poolcontroller/config/
 EXPOSE 3000 9801
 
+RUN apt-get update ; apt-get install -fy git python udev
+
 # Setup base app
 RUN mkdir -p /usr/app/
 WORKDIR /usr/app/
@@ -12,7 +14,7 @@ WORKDIR /usr/app/poolcontroller
 
 # Install dependencies
 RUN npm install typescript -g
-
+RUN npm install @types/node --save-dev
 # Install the main app
 RUN npm install --production
 
