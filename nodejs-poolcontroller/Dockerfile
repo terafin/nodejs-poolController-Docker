@@ -1,4 +1,5 @@
-FROM arm32v7/node:10-jessie
+# FROM node:9
+FROM node:10-jessie
 
 VOLUME /var/poolcontroller/config/
 EXPOSE 3000 9801
