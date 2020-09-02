@@ -1,5 +1,5 @@
 # FROM node:9
-FROM node:10-jessie
+FROM node:10
 
 VOLUME /var/poolcontroller/config/
 EXPOSE 3000 9801
