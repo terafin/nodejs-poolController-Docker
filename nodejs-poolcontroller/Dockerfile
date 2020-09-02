@@ -12,11 +12,6 @@ WORKDIR /usr/app/
 RUN git clone https://github.com/tagyoureit/nodejs-poolController.git poolcontroller
 WORKDIR /usr/app/poolcontroller
 
-# RUN mkdir -p /var/poolcontroller/config/
-# ADD https://raw.githubusercontent.com/tagyoureit/nodejs-poolController/master/config.json /var/poolcontroller/config/ 
-# RUN rm /usr/app/poolcontroller/config.json
-# RUN ln -s /var/poolcontroller/config/config.json /usr/app/poolcontroller/config.json
-
 # Install
 RUN npm install --production
 

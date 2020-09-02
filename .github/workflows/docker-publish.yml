@@ -15,5 +15,5 @@ jobs:
                   username: ${{ secrets.DOCKER_USERNAME }}
                   password: ${{ secrets.DOCKER_PASSWORD }}
                   token: ${{secrets.GITHUB_TOKEN}}
-                  platforms: linux/amd64,linux/arm64,linux/arm
+                  platforms: linux/arm
                   tag: latest
