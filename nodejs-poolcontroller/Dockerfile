@@ -10,6 +10,7 @@ WORKDIR /usr/app/
 RUN git clone https://github.com/tagyoureit/nodejs-poolController.git poolcontroller
 WORKDIR /usr/app/poolcontroller
 
+RUN npm install typescript -g
 # Install
 RUN npm install --production
 
