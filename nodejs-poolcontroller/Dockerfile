@@ -4,9 +4,6 @@ FROM node:10
 VOLUME /var/poolcontroller/config/
 EXPOSE 3000 9801
 
-RUN apt-get update 
-RUN apt-get install -fy npm
-
 # Setup base app
 RUN mkdir -p /usr/app/
 WORKDIR /usr/app/
