@@ -2,7 +2,7 @@
 FROM node:12
 
 VOLUME /var/poolcontroller/config/
-EXPOSE 3000 9801
+EXPOSE 4200
 
 RUN apt-get update ; apt-get install -fy git python udev
 
