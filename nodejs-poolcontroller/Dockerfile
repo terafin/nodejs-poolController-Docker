@@ -1,4 +1,3 @@
-# FROM node:9
 FROM node:12
 
 VOLUME /var/poolcontroller/config/
