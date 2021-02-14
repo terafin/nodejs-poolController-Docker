@@ -20,5 +20,4 @@ RUN npm install --production
 # Setup config areas
 WORKDIR /usr/app/poolcontroller/
 
-# Go!
 CMD ["npm", "start"]
