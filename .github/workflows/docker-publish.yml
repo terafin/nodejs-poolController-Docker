@@ -19,7 +19,9 @@ jobs:
                 imageName: nodejs-poolcontroller
                 dockerFile: nodejs-poolcontroller/Dockerfile
                 dockerUser: ${{ secrets.DOCKER_USERNAME }}
+                dockerHubUser: ${{ secrets.DOCKER_USERNAME }}
                 dockerPassword: ${{ secrets.DOCKER_PASSWORD }}
+                dockerHubPassword: ${{ secrets.DOCKER_PASSWORD }}
 #             - name: Build multi platform
 #               uses: dawidd6/action-docker-publish-changed@v3
 #               with:
