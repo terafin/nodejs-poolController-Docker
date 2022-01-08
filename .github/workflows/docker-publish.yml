@@ -16,7 +16,7 @@ jobs:
               uses: ilteoood/docker_buildx@master
               with:
                 publish: true
-                imageName: terafin/nodejs-poolcontroller:latest
+                imageName: nodejs-poolcontroller
                 dockerUser: ${{ secrets.DOCKER_USERNAME }}
                 dockerPassword: ${{ secrets.DOCKER_PASSWORD }}
 #             - name: Build multi platform
