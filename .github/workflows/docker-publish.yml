@@ -12,11 +12,19 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@master
-            - name: Build multi platform
-              uses: dawidd6/action-docker-publish-changed@v3
+            - name: Build and publish image
+              uses: ilteoood/docker_buildx@master
               with:
-                  username: ${{ secrets.DOCKER_USERNAME }}
-                  password: ${{ secrets.DOCKER_PASSWORD }}
-                  token: ${{secrets.GITHUB_TOKEN}}
-                  platforms: linux/amd64,linux/arm64,linux/arm/v7
-                  tag: latest
+                publish: true
+                imageName: terafin/nodejs-poolcontroller:latest
+                dockerUser: ${{ secrets.DOCKER_USERNAME }}
+                dockerPassword: ${{ secrets.DOCKER_PASSWORD }}
+#             - name: Build multi platform
+#               uses: dawidd6/action-docker-publish-changed@v3
+#               with:
+#                   username: ${{ secrets.DOCKER_USERNAME }}
+#                   password: ${{ secrets.DOCKER_PASSWORD }}
+#                   imageName: terafin/
+#                   publish: true
+#                   platforms: linux/amd64,linux/arm64,linux/arm/v7
+#                   tag: latest
