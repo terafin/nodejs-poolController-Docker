@@ -21,7 +21,7 @@ jobs:
               uses: ilteoood/docker_buildx@master
               with:
                 publish: true
-                imageName: nodejs-poolcontroller
+                imageName: terafin/nodejs-poolcontroller
                 dockerFile: nodejs-poolcontroller/Dockerfile
                 dockerUser: ${{ secrets.DOCKER_USERNAME }}
                 dockerHubUser: ${{ secrets.DOCKER_USERNAME }}
