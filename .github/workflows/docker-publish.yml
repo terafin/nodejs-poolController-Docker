@@ -17,6 +17,7 @@ jobs:
               with:
                 publish: true
                 imageName: nodejs-poolcontroller
+                dockerFile: nodejs-poolcontroller/Dockerfile
                 dockerUser: ${{ secrets.DOCKER_USERNAME }}
                 dockerPassword: ${{ secrets.DOCKER_PASSWORD }}
 #             - name: Build multi platform
