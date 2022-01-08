@@ -18,6 +18,4 @@ jobs:
                 imageName: terafin/nodejs-poolcontroller
                 dockerFile: nodejs-poolcontroller/Dockerfile
                 dockerUser: ${{ secrets.DOCKER_USERNAME }}
-                dockerHubUser: ${{ secrets.DOCKER_USERNAME }}
                 dockerPassword: ${{ secrets.DOCKER_PASSWORD }}
-                dockerHubPassword: ${{ secrets.DOCKER_PASSWORD }}
